@@ -18,8 +18,8 @@ class BooksController < ApplicationController
       #フラッシュメッセージを設定する
       flash[:notice]="Book was successfully created."
 
-      #トップ画面へリダイレクト
-      redirect_to '/books'
+      #詳細画面画面へリダイレクト
+      redirect_to book_path(@book.id)
     else
       #フラッシュメッセージを設定する
       flash[:notice]="Error."

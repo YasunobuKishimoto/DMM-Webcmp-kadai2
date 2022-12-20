@@ -1,7 +1,7 @@
 <h1>Books#index</h1>
 <%= flash[:notice] %>
 <% if @book.errors.any? %>
-  <%= @book.errors.count %>件のエラーが発生しました
+  <%= @book.errors.count %>errors
   <ul>
     <% @book.errors.full_messages.each do |message| %>
       <li><%= message %></li>
@@ -29,7 +29,7 @@
           <%= link_to "Edit", edit_book_path(book.id), method: :get %>
         </td>
         <td>
-          <%= link_to "Delete", book_path(book.id), method: :delete, "data-confirm" => "Are you sure?" %>
+          <%= link_to "Destroy", book_path(book.id), method: :delete, "data-confirm" => "Are you sure?" %>
         </td>
       </tr>
       <% end %>
