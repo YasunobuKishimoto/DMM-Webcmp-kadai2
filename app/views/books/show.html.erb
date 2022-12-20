@@ -1,0 +1,16 @@
+
+<%= flash[:notice] %>
+<% if @book.errors.any? %>
+  <%= @book.errors.count %>件のエラーが発生しました
+  <ul>
+    <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<p><strong>Title: </strong><%= @book.title %></p>
+<p><strong>Body: </strong><%= @book.body %></p>
+
+<a class="edit" href=<%= edit_book_path(@book.id) %>>Edit</a> |
+<a class="back" href="/books">Back</a>
